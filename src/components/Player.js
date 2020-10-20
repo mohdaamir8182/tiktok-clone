@@ -8,10 +8,6 @@ const {height} = Dimensions.get('window');
 
 
 const Player = ({video,isPlay,isPaused}) =>   {
-
-    // const [paused, setPaused] = useState(true);
-
-    // const togglePaused = () => setPaused(prev => !prev) // add this toggle function
   
     return isPlay? (
        

@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import { View, Text , StyleSheet, StatusBar, Platform} from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-
-  render() {
+const Header = () => {
+  
     return (
       <View style={styles.container}>
         <Text style={styles.followTextStyle}>Following</Text>
@@ -17,7 +11,6 @@ export default class Header extends Component {
         <Text style={{...styles.followTextStyle,fontWeight: 'bold'}}>For You</Text>
       </View>
     );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -44,3 +37,5 @@ const styles = StyleSheet.create({
         color: 'white'
     }
 });
+
+export default Header;
