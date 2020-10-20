@@ -58,52 +58,69 @@ const Hero = () =>  {
         setPaused(false)
     }
 
+   const onViewableItemsChanged = (changed, viewableItems) => {
+
+    // console.log("CHANGED....",changed)changed[0]
+
+    // console.log("SELECTED....", selected)
+
+        // setSelected(changed.index);
+    
+        // viewableItems.forEach(item => {
+        //   if (item.isViewable) {
+        //     this.player[item.item.id].seek(0, 0);
+        //   }
+        // });
+        
+    };
+
+    const renderListItem = (index , item) => {
+
+        return(
+            <View key={index}>
+
+                <Player
+                    video={item.video}
+                    isPlay={selected === index}
+                    isPaused={paused}
+                />
+
+                <Sidebar />
+                
+                <Info />
+
+                <View style={styles.btn}>
+                    {!paused ? null :<Image 
+                        source={require('../assets/icons/play.png')} 
+                        style={{height: '100%',width: '100%', tintColor: 'white'}}
+                    />}
+                </View>
+
+            </View>
+        )
+    }
+
     return (
-        // <TouchableOpacity
-        //     activeOpacity={1} 
-        //     onPress={togglePaused} 
-        //     style={styles.mainContainer}
-        // >
-        <View style={styles.mainContainer}>
 
-            <ViewPager
-                style={styles.container}
-                orientation='vertical'
-                onPageSelected={e => videoSwiped(e)}
-                initialPage={0}>
-                {data.map((item, index) => {
-                    return (
-                        <View key={index}>
-                            <Player
-                                video={item.video}
-                                //poster={item.poster}
-                                isPlay={selected === index}
-                                isPaused={paused}
-                            />
-
-                            <Sidebar />
-                            
-                            <Info />
-                        </View>
-                        );
-                    })
-                }
-            </ViewPager>
-
-            {
-                paused && <View style={styles.btn}>
-                                <Image 
-                                    source={require('../assets/icons/play.png')} 
-                                    style={{height: '100%',width: '100%', tintColor: 'white'}}
-                                />
-                        </View>
-            }
-
-            
-
-            
-
+        <View style={{flex:1}}>
+        
+        <FlatList
+          data={data}
+          decelerationRate="fast"
+          keyExtractor={item => item.id}
+          onViewableItemsChanged={(changed, viewableItems) => onViewableItemsChanged(changed, viewableItems)}
+          removeClippedSubviews={false}
+          renderItem={({index , item}) => renderListItem(index , item)}
+          showsVerticalScrollIndicator={false}
+          snapToAlignment="start"
+          snapToInterval={height + 5}
+          viewabilityConfig={{
+            waitForInteraction: true,
+            viewAreaCoveragePercentThreshold: 100,
+          }}
+        />
         </View>
+        
 	)
 }
 
@@ -111,11 +128,10 @@ const Hero = () =>  {
 const styles = StyleSheet.create({
     mainContainer:{
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
     container:{
-        height: height,
+        // height: height,
+        flex: 1
     },
     btn:{
         height: 50,
