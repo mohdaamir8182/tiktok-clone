@@ -33,14 +33,14 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
             <Text style={styles.textStyle}>79.2K</Text>
         </TouchableOpacity>
 
-        <View style={styles.icon}>
+        <TouchableOpacity onPress={()=>console.log('clicked')} style={styles.icon}>
             <Image 
                 source={require('../assets/icons/comment.png')}
                 style={{height: '100%', width: '100%', }}
                 resizeMode='cover'
             />
             <Text style={styles.textStyle}>6788</Text>
-        </View>
+        </TouchableOpacity>
 
         <View style={styles.icon}>
             <Image 

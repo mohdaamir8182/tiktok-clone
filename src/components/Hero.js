@@ -59,12 +59,12 @@ const Hero = () =>  {
     }
 
     return (
-        // <TouchableOpacity
-        //     activeOpacity={1} 
-        //     onPress={togglePaused} 
-        //     style={styles.mainContainer}
-        // >
-        <View style={styles.mainContainer}>
+        
+        <TouchableOpacity
+            activeOpacity={1} 
+            onPress={togglePaused} 
+            style={styles.mainContainer}
+        >
 
             <ViewPager
                 style={styles.container}
@@ -84,26 +84,21 @@ const Hero = () =>  {
                             <Sidebar />
                             
                             <Info />
+
+                            <View style={styles.btn}>
+                                {!paused ? null :<Image 
+                                    source={require('../assets/icons/play.png')} 
+                                    style={{height: '100%',width: '100%', tintColor: 'white'}}
+                                />}
+                            </View>
+
                         </View>
                         );
                     })
                 }
             </ViewPager>
 
-            {
-                paused && <View style={styles.btn}>
-                                <Image 
-                                    source={require('../assets/icons/play.png')} 
-                                    style={{height: '100%',width: '100%', tintColor: 'white'}}
-                                />
-                        </View>
-            }
-
-            
-
-            
-
-        </View>
+        </TouchableOpacity>
 	)
 }
 
@@ -111,8 +106,6 @@ const Hero = () =>  {
 const styles = StyleSheet.create({
     mainContainer:{
         flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
     container:{
         height: height,
