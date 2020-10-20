@@ -1,22 +1,23 @@
 import React, { Component,useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-const Info = () => {
+const Info = ({info}) => {
  
     return (
       <View style={styles.container}>
 
-        <Text style={styles.nameStyle}> @mohd_aamir065 </Text>
+        <TouchableOpacity>
+            <Text style={styles.nameStyle}> 
+                {info.author} 
+            </Text>
+        </TouchableOpacity>
 
-        <Text style={styles.captionStyle}> ICC_CWC2019 </Text>
+        <Text style={styles.captionStyle}> {info.caption} </Text>
 
-        <Text style={styles.tagsStyle}>
-            Jason Roy six #viral, #trend  {"\n"}
-            #foryoupage, #cwc2019, #hit{"\n"}
-             #tiktok, #leeds, #stevesmith {"\n"}#six, #cricket, #view</Text>
+        <Text style={styles.tagsStyle}>{info.tags}</Text>
 
-        <Text style={styles.originalStyle}> @Original - Eng vs Aus cwc2019</Text>
+        <Text style={styles.originalStyle}> @Original - {info.original}</Text>
 
       </View>
     );
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     },
     nameStyle:{
         color: 'white',
-        fontSize: moderateScale(18),
+        fontSize: moderateScale(19),
         fontWeight: 'bold',
         marginBottom: verticalScale(15)
     },
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
     },
     originalStyle:{
         color: 'white',
-        fontSize: moderateScale(18),
+        fontSize: moderateScale(16),
         //fontWeight: 'bold',
         marginBottom: verticalScale(15)
     }

@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { SafeAreaView} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 
-
-import Home from './src/screens/Home'
+import {MainStack} from './src/Routes';
 
 export default class App extends Component {
   
   render() {
     return (
-      <Home />
+      <NavigationContainer>
+          <MainStack />
+      </NavigationContainer>
+      
     );
   }
 }

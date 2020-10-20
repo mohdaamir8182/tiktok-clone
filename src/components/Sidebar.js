@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image , TouchableOpacity} from 'react-native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
- const Sidebar = () => {
+ const Sidebar = ({analytics}) => {
  
 
     return (
       <View style={styles.container}>
 
-        <View style={styles.avatar}>
+        <TouchableOpacity style={styles.avatar}>
             <Image 
-                source={require('../assets/roundprofile.png')}
+                source={analytics.profilePic}
                 style={{height: '100%', width: '100%', }}
                 resizeMode='cover'
             />
@@ -22,7 +22,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
                     resizeMode='cover'
                 />
             </View>
-        </View>
+        </TouchableOpacity>
         
         <TouchableOpacity onPress={()=>console.log('clicked')} style={styles.icon}>
             <Image 
@@ -30,7 +30,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
                 style={{height: '100%', width: '100%', }}
                 resizeMode='cover'
             />
-            <Text style={styles.textStyle}>79.2K</Text>
+            <Text style={styles.textStyle}>{analytics.likes}</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={()=>console.log('clicked')} style={styles.icon}>
@@ -39,25 +39,25 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
                 style={{height: '100%', width: '100%', }}
                 resizeMode='cover'
             />
-            <Text style={styles.textStyle}>6788</Text>
+            <Text style={styles.textStyle}>{analytics.comments}</Text>
         </TouchableOpacity>
 
-        <View style={styles.icon}>
+        <TouchableOpacity style={styles.icon}>
             <Image 
                 source={require('../assets/icons/share.png')}
                 style={{height: '100%', width: '100%', }}
                 resizeMode='cover'
             />
-            <Text style={styles.textStyle}>14.2K</Text>
-        </View>
+            <Text style={styles.textStyle}>{analytics.shares}</Text>
+        </TouchableOpacity>
 
-        <View style={{...styles.soundBg, marginTop: verticalScale(35),}}>
+        <TouchableOpacity style={{...styles.soundBg, marginTop: verticalScale(35),}}>
             <Image 
                 source={require('../assets/roundprofile.png')}
                 style={{height: '50%', width: '50%', }}
                 resizeMode='cover'
             />
-        </View>
+        </TouchableOpacity>
 
     
       </View>

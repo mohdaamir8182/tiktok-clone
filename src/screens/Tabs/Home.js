@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text,StatusBar,StyleSheet } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 
-import Header from '../components/Header'
-import Hero from '../components/Hero'
-import Tabs from '../components/Tabs'
+import Header from '../../components/Header'
+import Hero from '../../components/Hero'
+import Tabs from '../../components/Tabs'
+
+
 
 const Home = () =>  {
  
