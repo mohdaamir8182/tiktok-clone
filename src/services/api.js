@@ -35,18 +35,18 @@ export const videos = [
         }
     },{
         id:"3",
-        video: require('../assets/videos/v3.mp4'),
+        video: require('../assets/videos/v6.mp4'),
         info:{
-            author:"@zfazl_rtl878",
-            caption:"RO_HITMAN_SHARMA",
-            tags:'Rohit sharma century #viral, #trend \n #foryoupage, #cwc2019, #hit \n #tiktok, #leeds, #stevesmith \n #six, #cricket, #view',
-            original: "RO_HITMAN_SHARMA"
+            author:"@mr_umar665",
+            caption:"SUNSET_DANCE_MOVES",
+            tags:'Sunset moves #viral, #trend \n #foryoupage, #cwc2019, #hit \n #tiktok, #leeds, #stevesmith \n #six, #cricket, #view',
+            original: "SUNSET_DANCE_MOVES"
         },
         analytics:{
             profilePic: require('../assets/roundprofile.png'),
-            likes: "2M",
-            comments:"8888",
-            shares:"5M",
+            likes: "59.2K",
+            comments:"6548",
+            shares:"24.2K",
             audio: require('../assets/roundprofile.png')
         }
     },{
@@ -83,18 +83,18 @@ export const videos = [
         }
     },{
         id:"6",
-        video: require('../assets/videos/v6.mp4'),
+        video: require('../assets/videos/v3.mp4'),
         info:{
-            author:"@mr_umar665",
-            caption:"SUNSET_DANCE_MOVES",
-            tags:'Sunset moves #viral, #trend \n #foryoupage, #cwc2019, #hit \n #tiktok, #leeds, #stevesmith \n #six, #cricket, #view',
-            original: "SUNSET_DANCE_MOVES"
+            author:"@zfazl_rtl878",
+            caption:"RO_HITMAN_SHARMA",
+            tags:'Rohit sharma century #viral, #trend \n #foryoupage, #cwc2019, #hit \n #tiktok, #leeds, #stevesmith \n #six, #cricket, #view',
+            original: "RO_HITMAN_SHARMA"
         },
         analytics:{
             profilePic: require('../assets/roundprofile.png'),
-            likes: "59.2K",
-            comments:"6548",
-            shares:"24.2K",
+            likes: "2M",
+            comments:"8888",
+            shares:"5M",
             audio: require('../assets/roundprofile.png')
         }
     },{
@@ -147,3 +147,10 @@ export const videos = [
         }
     },
 ]
+
+
+
+
+
+
+
